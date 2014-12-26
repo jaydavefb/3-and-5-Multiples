@@ -1,0 +1,38 @@
+//C#.............
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Security.Cryptography;
+using System.IO;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+
+
+namespace Project_Euler_14
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int t = Convert.ToInt32(Console.ReadLine());
+            for (int j = 0; j < t; j++)
+            {
+                long n = Convert.ToInt32(Console.ReadLine());
+                long sum = 0;
+                n--;
+                long temp = n / 3;
+                long temp1 = n / 5;
+                long temp2 = n / 15;
+                sum += (3 * temp * (temp + 1)) / 2;
+                sum += (5 * temp1 * (temp1 + 1)) / 2;
+                sum -= (15 * temp2 * (temp2 + 1)) / 2;
+                    Console.WriteLine(sum);
+            }
+
+        }
+    }
+}
